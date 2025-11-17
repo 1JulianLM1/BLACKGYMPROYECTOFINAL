@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -59,6 +62,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.TurnoClienteTimer = new System.Windows.Forms.Timer(this.components);
+            this.dgvMuestroTurnos = new System.Windows.Forms.DataGridView();
+            this.eliminarTurno = new System.Windows.Forms.Button();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -66,6 +71,7 @@
             this.guna2GroupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMuestroTurnos)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -117,6 +123,8 @@
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.BorderRadius = 30;
             this.guna2GroupBox1.BorderThickness = 3;
+            this.guna2GroupBox1.Controls.Add(this.eliminarTurno);
+            this.guna2GroupBox1.Controls.Add(this.dgvMuestroTurnos);
             this.guna2GroupBox1.Controls.Add(this.BotonCerrarSesion);
             this.guna2GroupBox1.Controls.Add(this.MiFechaVencimiento);
             this.guna2GroupBox1.Controls.Add(this.MiFechaAbono);
@@ -158,6 +166,7 @@
             this.MiFechaVencimiento.Name = "MiFechaVencimiento";
             this.MiFechaVencimiento.Size = new System.Drawing.Size(154, 27);
             this.MiFechaVencimiento.TabIndex = 18;
+            this.MiFechaVencimiento.TextChanged += new System.EventHandler(this.MiFechaVencimiento_TextChanged_1);
             // 
             // MiFechaAbono
             // 
@@ -167,11 +176,11 @@
             this.MiFechaAbono.Name = "MiFechaAbono";
             this.MiFechaAbono.Size = new System.Drawing.Size(154, 27);
             this.MiFechaAbono.TabIndex = 17;
+            this.MiFechaAbono.TextChanged += new System.EventHandler(this.MiFechaAbono_TextChanged);
             // 
             // IngresoRestanteT
             // 
             this.IngresoRestanteT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
-            this.IngresoRestanteT.Enabled = false;
             this.IngresoRestanteT.Location = new System.Drawing.Point(764, 91);
             this.IngresoRestanteT.Name = "IngresoRestanteT";
             this.IngresoRestanteT.Size = new System.Drawing.Size(100, 27);
@@ -491,6 +500,55 @@
             this.TurnoClienteTimer.Interval = 1000;
             this.TurnoClienteTimer.Tick += new System.EventHandler(this.TurnoClienteTimer_Tick_1);
             // 
+            // dgvMuestroTurnos
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMuestroTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvMuestroTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMuestroTurnos.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvMuestroTurnos.Location = new System.Drawing.Point(23, 157);
+            this.dgvMuestroTurnos.Name = "dgvMuestroTurnos";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMuestroTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvMuestroTurnos.RowHeadersWidth = 51;
+            this.dgvMuestroTurnos.RowTemplate.Height = 24;
+            this.dgvMuestroTurnos.Size = new System.Drawing.Size(646, 437);
+            this.dgvMuestroTurnos.TabIndex = 20;
+            // 
+            // eliminarTurno
+            // 
+            this.eliminarTurno.BackColor = System.Drawing.Color.Maroon;
+            this.eliminarTurno.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.eliminarTurno.FlatAppearance.BorderSize = 3;
+            this.eliminarTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eliminarTurno.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.eliminarTurno.Location = new System.Drawing.Point(764, 299);
+            this.eliminarTurno.Name = "eliminarTurno";
+            this.eliminarTurno.Size = new System.Drawing.Size(130, 34);
+            this.eliminarTurno.TabIndex = 32;
+            this.eliminarTurno.Text = "Eliminar turno";
+            this.eliminarTurno.UseVisualStyleBackColor = false;
+            this.eliminarTurno.Click += new System.EventHandler(this.eliminarTurno_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -511,6 +569,7 @@
             this.tabPage3.ResumeLayout(false);
             this.guna2GroupBox3.ResumeLayout(false);
             this.guna2GroupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMuestroTurnos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -547,5 +606,7 @@
         private System.Windows.Forms.TextBox MiFechaVencimiento;
         private System.Windows.Forms.TextBox MiFechaAbono;
         private System.Windows.Forms.Button BotonCerrarSesion;
+        private System.Windows.Forms.DataGridView dgvMuestroTurnos;
+        private System.Windows.Forms.Button eliminarTurno;
     }
 }

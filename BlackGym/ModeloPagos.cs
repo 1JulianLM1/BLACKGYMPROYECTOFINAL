@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,24 +8,67 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace BlackGym
 {
     public class ModeloPagos
     {
+        public bool TienePagoAnterior(int idCliente)
+        {
+            Conexion c1 = new Conexion();
+            using (MySqlConnection conn = c1.obtenerconexion())
+            {
+                conn.Open();
+                string query = @"SELECT 1 
+                         FROM pagos 
+                         WHERE ID_CLIENTE = @ID_CLIENTE 
+                         LIMIT 1";
 
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ID_CLIENTE", idCliente);
+                    var result = cmd.ExecuteScalar();
+                    return result != null;
+                }
+            }
+        }
+        public void BorrarPagosAnteriores(int idCliente)
+        {
+            Conexion c1 = new Conexion();
+            using (MySqlConnection conn = c1.obtenerconexion())
+            {
+                conn.Open();
+
+                string query = @"DELETE FROM pagos 
+                         WHERE ID_CLIENTE = @ID_CLIENTE";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ID_CLIENTE", idCliente);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
         public Pagos BuscarPago(int idCliente/*Pagos u*/)
         {
             Conexion c1 = new Conexion();
             using (MySqlConnection miConexion = c1.obtenerconexion())
             {
                 miConexion.Open();
-                string query = @"SELECT *
-                         FROM pagos 
-                         WHERE ID_CLIENTE = @ID_CLIENTE 
-                         ORDER BY Fecha_Pago DESC 
-                         LIMIT 1";
+                string query = 
+                @"SELECT 
+                *FROM pagos
+                WHERE ID_CLIENTE = @ID_CLIENTE AND IngresosRestantes > 0
+                ORDER BY Fecha_Pago DESC
+                LIMIT 1";
 
+
+                    //@"SELECT *
+                    //     FROM pagos 
+                    //     WHERE ID_CLIENTE = @ID_CLIENTE 
+                    //     ORDER BY Fecha_Pago DESC 
+                    //     LIMIT 1";
                 MySqlCommand comando = new MySqlCommand(query, miConexion);
                 comando.Parameters.AddWithValue("@ID_CLIENTE", idCliente);
 

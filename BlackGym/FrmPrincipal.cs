@@ -30,29 +30,58 @@ namespace BlackGym
         {
             DateTime fechaAsignada = FechaTurno.Value;
 
+            // Hay que hacer un control para que el usuario no ingrese una fecha anterior a la actual, tampoco una usada por el mismo cliente, y tampoco que sea un fin de semana
+
+            if (fechaAsignada.Date < DateTime.Today)
+            {
+                MessageBox.Show("No puedes seleccionar una fecha anterior a la actual. Por favor, elige una fecha válida.");
+                FechaTurno.Value = DateTime.Today; // Restablecer al valor válido
+            }
+          else if (fechaAsignada.DayOfWeek == DayOfWeek.Saturday || fechaAsignada.DayOfWeek == DayOfWeek.Sunday)
+            {
+                MessageBox.Show("No puedes seleccionar un fin de semana. Por favor, elige un día entre lunes y viernes.");
+                FechaTurno.Value = DateTime.Today; // Restablecer al valor válido
+            }
+            else
+            {
+                // Aquí podrías agregar lógica para verificar si el usuario ya tiene un turno en esa fecha
+                ModeloTurno modeloTurno = new ModeloTurno();
+                bool tieneTurno = modeloTurno.UsuarioTieneTurnoEnFecha(SesionActual.UsuarioLogueado.Id, fechaAsignada);
+                if (tieneTurno)
+                {
+                    MessageBox.Show("Ya tienes un turno asignado en esta fecha. Por favor, elige otra fecha.");
+                    FechaTurno.Value = DateTime.Today; // Restablecer al valor válido
+                }
+            }
 
         }
         private void guardarT_Click(object sender, EventArgs e)
         {
-            if(IngresoRestanteVAR <= 0 || precio <= 0)
+            // Declarar UNA vez y usar la misma instancia dentro del método
+            ModeloPagos pagosModel = new ModeloPagos();
+
+            // Consultar el pago actual desde la base (tiempo real)
+            Pagos pago = pagosModel.BuscarPago(SesionActual.UsuarioLogueado.Id);
+            IngresoRestanteVAR = pago?.IngresosRestantesN ?? 0;
+            IngresoRestanteT.Text = IngresoRestanteVAR.ToString();
+
+            // CONTROL DE INGRESOS RESTANTES
+            if (IngresoRestanteVAR <= 0)
             {
                 MessageBox.Show("No tienes ingresos restantes para registrar un nuevo turno. Por favor, realiza un pago.");
                 return;
             }
-            //Controlamos si ingresa un horario
-            if(string.IsNullOrEmpty(listaHorarios.Text))
+
+            // Controlamos si ingresa un horario
+            if (string.IsNullOrEmpty(listaHorarios.Text))
             {
                 MessageBox.Show("Por favor, selecciona un horario para el turno.");
                 return;
             }
 
-
-            else
-            {
-
-            
-                string dia = FechaTurno.Value.ToString();
-                string hora = listaHorarios.Text;
+            // Construir turno
+            string dia = FechaTurno.Value.ToString();
+            string hora = listaHorarios.Text;
 
             Turno t = new Turno()
             {
@@ -66,20 +95,83 @@ namespace BlackGym
 
             if (resultado)
             {
-                ModeloPagos modeloPagos = new ModeloPagos();
-                bool restado = modeloPagos.RestarTurno(t.idUsuario);
-                    // Actualizar y mostrar los ingresos restantes
-                    Pagos pagoActual = modeloPagos.BuscarPago(t.idUsuario);
-                    int ingresosRestantesUsuario = pagoActual?.IngresosRestantesN ?? 0;
-                    IngresoRestanteT.Text = ingresosRestantesUsuario.ToString();
+                // Usar la misma instancia pagosModel para restar el turno
+                bool restado = pagosModel.RestarTurno(t.idUsuario);
 
-                    MessageBox.Show("Turno registrado correctamente. ID: " + turnoActualId);
+                // Volver a consultar la BD para actualizar lo que se muestra en pantalla
+                pago = pagosModel.BuscarPago(t.idUsuario);
+                IngresoRestanteVAR = pago?.IngresosRestantesN ?? 0;
+                IngresoRestanteT.Text = IngresoRestanteVAR.ToString();
+
+                MessageBox.Show("Turno registrado correctamente. ID: " + turnoActualId);
             }
             else
             {
                 MessageBox.Show("No se pudo registrar el turno.");
             }
-            }
+            //ModeloPagos modeloPagos = new ModeloPagos();
+            //Pagos pagoActual = modeloPagos.BuscarPago(SesionActual.UsuarioLogueado.Id);
+
+            //IngresoRestanteVAR = pagoActual?.IngresosRestantesN ?? 0;
+            //IngresoRestanteT.Text = IngresoRestanteVAR.ToString(); 
+
+            //// --- CONTROL DE INGRESOS RESTANTES ---
+            //if (IngresoRestanteVAR <= 0)
+            //{
+            //    MessageBox.Show("No tienes ingresos restantes para registrar un nuevo turno. Por favor, realiza un pago.");
+            //    return;
+            //}
+            //if (IngresoRestanteVAR <= 0 /*|| precio <= 0*/)
+            //{
+            //    MessageBox.Show("No tienes ingresos restantes para registrar un nuevo turno. Por favor, realiza un pago.");
+            //    return;
+            //}
+            //else if (IngresoRestanteVAR == 0) //tendriamos que comprobar en tiempo real, es decir hacer todo el codigo que hay en el load
+            //{
+            //    MessageBox.Show("No tienes ingresos restantes para registrar un nuevo turno. Por favor, realiza un pago.");
+            //    return;
+            //}
+            ////Controlamos si ingresa un horario
+            //if (string.IsNullOrEmpty(listaHorarios.Text))
+            //{
+            //    MessageBox.Show("Por favor, selecciona un horario para el turno.");
+            //    return;
+            //}
+
+
+            //else
+            //{
+
+
+            //    string dia = FechaTurno.Value.ToString();
+            //    string hora = listaHorarios.Text;
+
+            //    Turno t = new Turno()
+            //    {
+            //        dia = dia,
+            //        hora = hora,
+            //        idUsuario = SesionActual.UsuarioLogueado.Id
+            //    };
+
+            //    ModeloTurno modeloTurno = new ModeloTurno();
+            //    bool resultado = modeloTurno.RegistrarTurno(t, out turnoActualId);
+
+            //    if (resultado)
+            //    {
+            //        ModeloPagos modeloPagos = new ModeloPagos();
+            //        bool restado = modeloPagos.RestarTurno(t.idUsuario);
+            //        // Actualizar y mostrar los ingresos restantes
+            //        Pagos pagoActual = modeloPagos.BuscarPago(t.idUsuario);
+            //        int ingresosRestantesUsuario = pagoActual?.IngresosRestantesN ?? 0;
+            //        IngresoRestanteT.Text = ingresosRestantesUsuario.ToString();
+
+            //        MessageBox.Show("Turno registrado correctamente. ID: " + turnoActualId);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No se pudo registrar el turno.");
+            //    }
+            //}
         }
 
 
@@ -234,24 +326,30 @@ namespace BlackGym
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
-
             TurnoClienteTimer.Stop();
 
-            // Inicializar los ingresos restantes del usuario logueado
-            ModeloPagos modeloPagos = new ModeloPagos();
-            int idCliente = SesionActual.UsuarioLogueado.Id;
-           
-          
+            //Hay que controlar que el usuario sea el cliente logueado
 
+            int idCliente = SesionActual.UsuarioLogueado.Id;
+
+            ModeloTurno modeloTurnos = new ModeloTurno();
+            DataTable datosTurnos = modeloTurnos.obtenerTurnosPorUsuario(idCliente);
+            dgvMuestroTurnos.DataSource = datosTurnos;
+
+
+            //
+            ModeloPagos modeloPagos = new ModeloPagos();
+            
+
+            // Buscar el pago más reciente del usuario
             Pagos pagoActual = modeloPagos.BuscarPago(idCliente);
 
             if (pagoActual != null)
             {
-                // Mostrar fecha de abono (generada automáticamente al registrar el pago)
+                // Mostrar fecha de abono registrada
                 MiFechaAbono.Text = pagoActual.Fecha_Pago.ToString("dd/MM/yyyy");
 
-                // Mostrar fecha de vencimiento (viene de la base de datos)
+                // Mostrar fecha de vencimiento registrada
                 MiFechaVencimiento.Text = pagoActual.Fecha_Vencimiento.ToString("dd/MM/yyyy");
 
                 // Mostrar ingresos restantes
@@ -260,22 +358,59 @@ namespace BlackGym
             }
             else
             {
-                MessageBox.Show("No se encontraron pagos registrados para este usuario.");
+                // No tiene pagos registrados
 
-                // Valores por defecto
+                DateTime hoy = DateTime.Today;
+                DateTime vencimiento = hoy.AddMonths(1);
+
+                MiFechaAbono.Text = hoy.ToString("dd/MM/yyyy");
+                MiFechaVencimiento.Text = vencimiento.ToString("dd/MM/yyyy");
+
                 IngresoRestanteVAR = 0;
-                MiFechaAbono.Text = DateTime.Today.ToString("dd/MM/yyyy");
-                MiFechaVencimiento.Text = ""; // o podés usar DateTime.Today también
-
                 IngresoRestanteT.Text = "0";
             }
 
+            //TurnoClienteTimer.Stop();
+
+            //// Inicializar los ingresos restantes del usuario logueado
+            //ModeloPagos modeloPagos = new ModeloPagos();
+            //int idCliente = SesionActual.UsuarioLogueado.Id;
+
+
+
             //Pagos pagoActual = modeloPagos.BuscarPago(idCliente);
-            //IngresoRestanteVAR = pagoActual?.IngresosRestantesN ?? 0;
-            //MiFechaAbono = pagoActual?.Fecha_Pago ?? DateTime.Today;
-            //MiFechaVencimiento = pagoActual?.Fecha_Vencimiento ?? DateTime.Today;
-            //// Mostrar los ingresos restantes en el TextBox
-            //IngresoRestanteT.Text = IngresoRestanteVAR.ToString();
+
+            //if (pagoActual != null)
+            //{
+            //    // Mostrar fecha de abono (generada automáticamente al registrar el pago)
+            //    MiFechaAbono.Text = pagoActual.Fecha_Pago.ToString("dd/MM/yyyy");
+
+            //    // Mostrar fecha de vencimiento (viene de la base de datos)
+            //    MiFechaVencimiento.Text = pagoActual.Fecha_Vencimiento.ToString("dd/MM/yyyy");
+
+            //    // Mostrar ingresos restantes
+            //    IngresoRestanteVAR = pagoActual.IngresosRestantesN;
+            //    IngresoRestanteT.Text = IngresoRestanteVAR.ToString();
+            //}
+            //else
+            //{
+            //    //  MessageBox.Show("No se encontraron pagos registrados para este usuario.");
+            //    DateTime hoy = DateTime.Today;
+            //    DateTime vencimiento = hoy.AddMonths(1);
+            //    // Valores por defecto
+            //    IngresoRestanteVAR = 0;
+            //    MiFechaAbono.Text = hoy.ToString("dd/MM/yyyy");
+            //    MiFechaVencimiento.Text = vencimiento.ToString("dd/MM/yyyy"); // o podés usar DateTime.Today también
+
+            //    IngresoRestanteT.Text = IngresoRestanteVAR.ToString();
+            //}
+
+            ////Pagos pagoActual = modeloPagos.BuscarPago(idCliente);
+            ////IngresoRestanteVAR = pagoActual?.IngresosRestantesN ?? 0;
+            ////MiFechaAbono = pagoActual?.Fecha_Pago ?? DateTime.Today;
+            ////MiFechaVencimiento = pagoActual?.Fecha_Vencimiento ?? DateTime.Today;
+            ////// Mostrar los ingresos restantes en el TextBox
+            ////IngresoRestanteT.Text = IngresoRestanteVAR.ToString();
         }
 
         private void FechaAbono_Click(object sender, EventArgs e)
@@ -293,32 +428,87 @@ namespace BlackGym
             ModeloPagos modeloPagos = new ModeloPagos();
             int idCliente = SesionActual.UsuarioLogueado.Id;
 
-            // Obtener los ingresos restantes del usuario logueado desde la base de datos
+            // Obtener el último pago del usuario
             Pagos pagoActual = modeloPagos.BuscarPago(idCliente);
             int ingresosRestantesUsuario = pagoActual?.IngresosRestantesN ?? 0;
 
+            // 1️⃣ Si aún tiene ingresos disponibles → no permitir pagar
             if (ingresosRestantesUsuario > 0)
             {
                 MessageBox.Show("Aún tienes ingresos restantes. No es necesario realizar un nuevo pago.");
                 return;
             }
-            else
-            {
-                if (precio == 0)
-                {
-                    MessageBox.Show("Por favor, selecciona un tipo de abono válido antes de realizar el pago.");
-                    return;
-                }
-                else
-                {
-                    DateTime fechaPago = DateTime.Today;
-                    int ImportePago = precio;
-                    int IngresosRestantesN = IngresoRestanteVAR;
-                    modeloPagos.insertarPago(idCliente, fechaPago, ImportePago, IngresosRestantesN);
 
-                    MessageBox.Show("Pago registrado correctamente con vencimiento en " + fechaPago.AddMonths(1).ToShortDateString());
-                }
+            // 2️⃣ Validar que haya seleccionado un abono
+            if (precio == 0)
+            {
+                MessageBox.Show("Por favor, selecciona un tipo de abono válido antes de realizar el pago.");
+                return;
             }
+
+            // 3️⃣ Si existe un pago anterior → borrarlo
+            if (modeloPagos.TienePagoAnterior(idCliente))
+            {
+                modeloPagos.BorrarPagosAnteriores(idCliente);
+            }
+
+            // 4️⃣ Insertar SIEMPRE el nuevo pago
+            DateTime fechaPago = DateTime.Today;
+            int ImportePago = precio;
+            int IngresosRestantesN = IngresoRestanteVAR;
+
+            modeloPagos.insertarPago(idCliente, fechaPago, ImportePago, IngresosRestantesN);
+
+            // 5️⃣ Mensaje final
+            MessageBox.Show(
+                "Pago registrado correctamente con vencimiento en " +
+                fechaPago.AddMonths(1).ToShortDateString()
+            );
+
+
+
+            //ModeloPagos modeloPagos = new ModeloPagos();
+            //int idCliente = SesionActual.UsuarioLogueado.Id;
+
+            //// Obtener los ingresos restantes del usuario logueado desde la base de datos
+            //Pagos pagoActual = modeloPagos.BuscarPago(idCliente);
+            //int ingresosRestantesUsuario = pagoActual?.IngresosRestantesN ?? 0;
+
+            //if (ingresosRestantesUsuario > 0)
+            //{
+            //    MessageBox.Show("Aún tienes ingresos restantes. No es necesario realizar un nuevo pago.");
+            //    return;
+            //}
+            //else
+            //{
+            //    if (precio == 0)
+            //    {
+            //        MessageBox.Show("Por favor, selecciona un tipo de abono válido antes de realizar el pago.");
+            //        return;
+            //    }
+            //    else if(modeloPagos.TienePagoAnterior(idCliente))
+            //    {
+            //        modeloPagos.BorrarPagosAnteriores(idCliente);
+            //    }
+            //    else
+            //    {
+
+
+            //        DateTime fechaPago = DateTime.Today;
+            //        int ImportePago = precio;
+            //        int IngresosRestantesN = IngresoRestanteVAR;
+            //        modeloPagos.insertarPago(idCliente, fechaPago, ImportePago, IngresosRestantesN);
+
+            //        MessageBox.Show("Pago registrado correctamente con vencimiento en " + fechaPago.AddMonths(1).ToShortDateString());
+
+            //        MessageBox.Show(
+            //            "Pago registrado correctamente con vencimiento en "
+            //            + fechaPago.AddMonths(1).ToShortDateString()
+            //        );
+
+
+            //    }
+            //}
 
 
             //if (IngresoRestanteVAR > 0)
@@ -418,42 +608,49 @@ namespace BlackGym
 
         private void IngresoRestanteT_TextChanged(object sender, EventArgs e)
         {
-            //ModeloPagos modeloPagos = new ModeloPagos();
-            //int idCliente = SesionActual.UsuarioLogueado.Id;
-
-            //// Obtener los ingresos restantes del usuario logueado desde la base de datos
-            //Pagos pagoActual = modeloPagos.BuscarPago(idCliente);
-            //int ingresosRestantesUsuario = pagoActual?.IngresosRestantesN ?? 0;
-
-            //// Mostrar los ingresos restantes en el TextBox
-            //IngresoRestanteT.Text = ingresosRestantesUsuario.ToString();
+            //hay que impedir que el usuario pueda escribir por encima del valor que tiene, ya que es un campo informativo
+            this.ActiveControl = null;
+            IngresoRestanteT.TabStop = false; // No permite foco con Tab
+            
+            IngresoRestanteT.ReadOnly = true;
 
 
-            //Lo comentado se ignora
-            //if (MisTurnosSemanalesCBX.SelectedItem == null) return;
+            // ModeloPagos modeloPagos = new ModeloPagos();
+            // int idCliente = SesionActual.UsuarioLogueado.Id;
+
+            // // Obtener los ingresos restantes del usuario logueado desde la base de datos
+            // Pagos pagoActual = modeloPagos.BuscarPago(idCliente);
+            // int ingresosRestantesUsuario = pagoActual?.IngresosRestantesN ?? 0;
+
+            // // Mostrar los ingresos restantes en el TextBox
+            // IngresoRestanteT.Text = ingresosRestantesUsuario.ToString();
 
 
-            //switch (MisTurnosSemanalesCBX.SelectedItem.ToString())
-            //{
-            //    case "1":
-            //        IngresoRestanteVAR = 8;
-            //        break;
-            //    case "2":
-            //        IngresoRestanteVAR = 9;
-            //        break;
-            //    case "3":
-            //        IngresoRestanteVAR = 10;
-            //        break;
-            //    case "4":
-            //        IngresoRestanteVAR = 11;
-            //        break;
-            //    case "5":
-            //        IngresoRestanteVAR = 12;
-            //        break;
-            //    default:
-            //        IngresoRestanteVAR = 0;
-            //        break;
-            //}
+            // // Lo comentado se ignora
+            // if (MisTurnosSemanalesCBX.SelectedItem == null) return;
+
+
+            // switch (MisTurnosSemanalesCBX.SelectedItem.ToString())
+            // {
+            //     case "1":
+            //         IngresoRestanteVAR = 8;
+            //         break;
+            //     case "2":
+            //         IngresoRestanteVAR = 9;
+            //         break;
+            //     case "3":
+            //         IngresoRestanteVAR = 10;
+            //         break;
+            //     case "4":
+            //         IngresoRestanteVAR = 11;
+            //         break;
+            //     case "5":
+            //         IngresoRestanteVAR = 12;
+            //         break;
+            //     default:
+            //         IngresoRestanteVAR = 0;
+            //         break;
+            // }
 
 
 
@@ -484,6 +681,58 @@ namespace BlackGym
         private void listaHorarios_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void MiFechaVencimiento_TextChanged_1(object sender, EventArgs e)
+        {
+            MiFechaVencimiento.ReadOnly = true;
+            this.ActiveControl = null;
+            MiFechaVencimiento.TabStop = false; // No permite foco con Tab
+            
+        }
+
+        private void MiFechaAbono_TextChanged(object sender, EventArgs e)
+        {
+            MiFechaAbono.ReadOnly = true;
+
+            //ahora debemos impedir que el usuario pueda clickear por encima del text
+            this.ActiveControl = null;
+            MiFechaAbono.TabStop = false; // No permite foco con Tab
+           
+        }
+
+        private void eliminarTurno_Click(object sender, EventArgs e)
+        {
+            if (dgvMuestroTurnos.SelectedRows.Count > 0) // Verificar que haya una fila seleccionada
+            {
+                DataGridViewRow filaSeleccionada = dgvMuestroTurnos.SelectedRows[0];
+                if (int.TryParse(filaSeleccionada.Cells["idTurno"].Value?.ToString(), out int idTurno)) // Verificar que el ID sea válido
+                {
+                    ModeloTurno modeloTurno = new ModeloTurno();
+                    bool eliminado = modeloTurno.EliminarTurno(idTurno);
+
+                    if (eliminado)
+                    {
+                        MessageBox.Show("Turno eliminado correctamente.");
+
+                        // Actualizar el DataGridView para reflejar los cambios
+                        DataTable datosActualizados = modeloTurno.obtenerTurno();
+                        dgvMuestroTurnos.DataSource = datosActualizados;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el turno.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("ID de turno no válido.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un turno para eliminar.");
+            }
         }
 
         /*if (segundosTrabajados < segundosIniciales) este es el original

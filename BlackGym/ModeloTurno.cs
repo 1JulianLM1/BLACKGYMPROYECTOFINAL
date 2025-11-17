@@ -11,6 +11,53 @@ namespace BlackGym
 {
     public class ModeloTurno
     {
+        public DataTable obtenerTurnosPorUsuario(int idUsuario)
+        {
+            Conexion c1 = new Conexion();
+            DataTable dataTable = new DataTable();
+
+            using (MySqlConnection miConexion = c1.obtenerconexion())
+            {
+                miConexion.Open();
+                string query = @"SELECT * FROM turno WHERE idUsuario = @idUsuario ORDER BY dia";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, miConexion))
+                {
+                    cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dataTable);
+                }
+            }
+
+            return dataTable;
+        }
+        public bool UsuarioTieneTurnoEnFecha(int idUsuario, DateTime fecha)
+        {
+            bool existe = false;
+
+            string query = @"SELECT COUNT(*) 
+                     FROM turno 
+                     WHERE idUsuario = @idUsuario 
+                     AND DATE(dia) = @fecha";
+
+            Conexion c1 = new Conexion();
+
+            using (MySqlConnection conn = c1.obtenerconexion())
+            {
+                conn.Open();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                    cmd.Parameters.AddWithValue("@fecha", fecha.Date);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    existe = count > 0;
+                }
+            }
+
+            return existe;
+        }
         public DataTable obtenerTurno()
         {
             Conexion c1 = new Conexion();
