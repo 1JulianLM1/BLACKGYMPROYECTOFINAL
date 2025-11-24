@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BlackGym.ADMINISTRADOR">
+    <Position X="1.25" Y="0.5" Width="3" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>DDChAQYEMDIAABAAACDAABCiAjhgAEAgAmABggABAIA=</HashCode>
+      <FileName>ADMINISTRADOR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.Form1" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAEACAACBAACgSABAACAIAkAAgAAIAAAQAAABA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.FrmPrincipal" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCCVAQYERGAAQBSR4AGDQRjSAEAEkEBAggkQECQFBAI=</HashCode>
+      <FileName>FrmPrincipal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.Recepcion" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DDChAAAEICAAABQAAADAAJCiACAAAEAgAigBAQABAIA=</HashCode>
+      <FileName>Recepcion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.RecuperarContraseñayGmail" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAYAACAIDBAACgCAAAACAYIAAAAEAACAAQAAAEA=</HashCode>
+      <FileName>RecuperarContraseñayGmail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.RegistroUsuario" Collapsed="true">
+    <Position X="11.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAQAYIACAKDBAQigCAAARCEQAAAAQEIACAASIAAEA=</HashCode>
+      <FileName>RegistroUsuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.Conexion" Collapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAEAAAAABAAAAAAABgAQgAA=</HashCode>
+      <FileName>Conexion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.ControlLogin" Collapsed="true">
+    <Position X="11.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ControlLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.ControlPago" Collapsed="true">
+    <Position X="13.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ControlPago.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.HashPassword" Collapsed="true">
+    <Position X="11.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>HashPassword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.HelperTurnos" Collapsed="true">
+    <Position X="16.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>HelperTurnos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.ModeloLogin" Collapsed="true">
+    <Position X="11.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAIAAIAKAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>ModeloLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.ModeloPagos" Collapsed="true">
+    <Position X="13.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAiBAAAAAAABAAAAAAAAAAABIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModeloPagos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.ModeloTurno" Collapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEBAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ModeloTurno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.Pagos" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAIAAAAQAAAAAAAAAAAAAAAABEAIAAA=</HashCode>
+      <FileName>Pagos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.SesionActualPago" Collapsed="true">
+    <Position X="13.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pagos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.Program" Collapsed="true">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.Turno" Collapsed="true">
+    <Position X="16.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAEAAAAAAAAAAAAAAAAAABAAAgAAAAAAAA=</HashCode>
+      <FileName>Turno.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlackGym.Usuario" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAIAAAAAAQACAIAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SesionActual" Collapsed="true">
+    <Position X="11.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
