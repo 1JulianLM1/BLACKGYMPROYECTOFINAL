@@ -33,6 +33,24 @@ namespace BlackGym
                 }
             }
         }
+        public bool ActualizarIngresosRestantes(int idCliente, int nuevosIngresosRestantes)
+        {
+            Conexion c1 = new Conexion();
+            using (MySqlConnection conn = c1.obtenerconexion())
+            {
+                conn.Open();
+                string query = @"UPDATE Pagos 
+                                 SET IngresosRestantes = @IngresosRestantes 
+                                 WHERE ID_CLIENTE = @ID_CLIENTE";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IngresosRestantes", nuevosIngresosRestantes);
+                    cmd.Parameters.AddWithValue("@ID_CLIENTE", idCliente);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
         public void BorrarPagosAnteriores(int idCliente)
         {
             Conexion c1 = new Conexion();

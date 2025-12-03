@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.BotonCerrarSesion = new System.Windows.Forms.Button();
@@ -59,6 +59,10 @@
             this.dgvMostrarUsuario = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.MisTurnosSemanalesCBX = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ModificarTelefono = new System.Windows.Forms.Button();
+            this.ModificarCorreo = new System.Windows.Forms.Button();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMostrarTurnos)).BeginInit();
@@ -141,34 +145,34 @@
             // 
             // dgvMostrarTurnos
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMostrarTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMostrarTurnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvMostrarTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMostrarTurnos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMostrarTurnos.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvMostrarTurnos.Location = new System.Drawing.Point(24, 10);
             this.dgvMostrarTurnos.Name = "dgvMostrarTurnos";
             this.dgvMostrarTurnos.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMostrarTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMostrarTurnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvMostrarTurnos.RowHeadersWidth = 51;
             this.dgvMostrarTurnos.RowTemplate.Height = 24;
             this.dgvMostrarTurnos.Size = new System.Drawing.Size(646, 603);
@@ -193,6 +197,10 @@
             this.guna2GroupBox2.BorderColor = System.Drawing.Color.Black;
             this.guna2GroupBox2.BorderRadius = 30;
             this.guna2GroupBox2.BorderThickness = 3;
+            this.guna2GroupBox2.Controls.Add(this.ModificarCorreo);
+            this.guna2GroupBox2.Controls.Add(this.ModificarTelefono);
+            this.guna2GroupBox2.Controls.Add(this.MisTurnosSemanalesCBX);
+            this.guna2GroupBox2.Controls.Add(this.label10);
             this.guna2GroupBox2.Controls.Add(this.eliminarUsuario);
             this.guna2GroupBox2.Controls.Add(this.ModificarRol);
             this.guna2GroupBox2.Controls.Add(this.label9);
@@ -232,7 +240,7 @@
             this.eliminarUsuario.FlatAppearance.BorderSize = 3;
             this.eliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eliminarUsuario.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.eliminarUsuario.Location = new System.Drawing.Point(625, 477);
+            this.eliminarUsuario.Location = new System.Drawing.Point(275, 526);
             this.eliminarUsuario.Name = "eliminarUsuario";
             this.eliminarUsuario.Size = new System.Drawing.Size(130, 34);
             this.eliminarUsuario.TabIndex = 30;
@@ -380,7 +388,7 @@
             // 
             // BtnModificarUsuario
             // 
-            this.BtnModificarUsuario.Location = new System.Drawing.Point(786, 477);
+            this.BtnModificarUsuario.Location = new System.Drawing.Point(416, 526);
             this.BtnModificarUsuario.Name = "BtnModificarUsuario";
             this.BtnModificarUsuario.Size = new System.Drawing.Size(130, 34);
             this.BtnModificarUsuario.TabIndex = 15;
@@ -399,19 +407,19 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Enabled = false;
             this.txtTelefono.Location = new System.Drawing.Point(670, 203);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(211, 27);
             this.txtTelefono.TabIndex = 13;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // txtCorreo
             // 
-            this.txtCorreo.Enabled = false;
             this.txtCorreo.Location = new System.Drawing.Point(670, 135);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(211, 27);
             this.txtCorreo.TabIndex = 12;
+            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             // 
             // txtNombre
             // 
@@ -461,6 +469,53 @@
             this.guna2Button2.Size = new System.Drawing.Size(1271, 45);
             this.guna2Button2.TabIndex = 2;
             this.guna2Button2.Text = "PANEL DE USUARIOS ADMIN";
+            // 
+            // MisTurnosSemanalesCBX
+            // 
+            this.MisTurnosSemanalesCBX.FormattingEnabled = true;
+            this.MisTurnosSemanalesCBX.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.MisTurnosSemanalesCBX.Location = new System.Drawing.Point(670, 462);
+            this.MisTurnosSemanalesCBX.Name = "MisTurnosSemanalesCBX";
+            this.MisTurnosSemanalesCBX.Size = new System.Drawing.Size(211, 28);
+            this.MisTurnosSemanalesCBX.TabIndex = 32;
+            this.MisTurnosSemanalesCBX.SelectedIndexChanged += new System.EventHandler(this.MisTurnosSemanalesCBX_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(94)))), ((int)(((byte)(94)))));
+            this.label10.Font = new System.Drawing.Font("Arial", 12F);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(237)))), ((int)(((byte)(249)))));
+            this.label10.Location = new System.Drawing.Point(424, 462);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(240, 23);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Turnos semanales totales:";
+            // 
+            // ModificarTelefono
+            // 
+            this.ModificarTelefono.Location = new System.Drawing.Point(564, 526);
+            this.ModificarTelefono.Name = "ModificarTelefono";
+            this.ModificarTelefono.Size = new System.Drawing.Size(154, 34);
+            this.ModificarTelefono.TabIndex = 33;
+            this.ModificarTelefono.Text = "Modificar Telefono";
+            this.ModificarTelefono.UseVisualStyleBackColor = true;
+            this.ModificarTelefono.Click += new System.EventHandler(this.ModificarTelefono_Click);
+            // 
+            // ModificarCorreo
+            // 
+            this.ModificarCorreo.Location = new System.Drawing.Point(738, 526);
+            this.ModificarCorreo.Name = "ModificarCorreo";
+            this.ModificarCorreo.Size = new System.Drawing.Size(143, 34);
+            this.ModificarCorreo.TabIndex = 34;
+            this.ModificarCorreo.Text = "Modificar Correo";
+            this.ModificarCorreo.UseVisualStyleBackColor = true;
+            this.ModificarCorreo.Click += new System.EventHandler(this.ModificarCorreo_Click);
             // 
             // ADMINISTRADOR
             // 
@@ -512,5 +567,9 @@
         private System.Windows.Forms.Button eliminarUsuario;
         private System.Windows.Forms.Button eliminarTurno;
         private System.Windows.Forms.Button BotonCerrarSesion;
+        private System.Windows.Forms.ComboBox MisTurnosSemanalesCBX;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button ModificarCorreo;
+        private System.Windows.Forms.Button ModificarTelefono;
     }
 }

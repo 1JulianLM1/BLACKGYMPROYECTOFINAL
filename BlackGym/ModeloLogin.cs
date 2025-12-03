@@ -44,6 +44,61 @@ namespace BlackGym
             }
             return null;
         }
+        //public bool ActualizarContactoUsuario(int idUsuario, string nuevoCorreo, string nuevoTelefono)
+        //{
+        //    Conexion c1 = new Conexion();
+        //    using (MySqlConnection conn = c1.obtenerconexion())
+        //    {
+        //        conn.Open();
+        //        string query = @"UPDATE usuarios 
+        //                         SET CorreoElectronico = @Correo, NumeroTelefono = @Telefono 
+        //                         WHERE ID = @ID";
+
+        //        using (MySqlCommand cmd = new MySqlCommand(query, conn))
+        //        {
+        //            cmd.Parameters.AddWithValue("@Correo", nuevoCorreo);
+        //            cmd.Parameters.AddWithValue("@Telefono", nuevoTelefono);
+        //            cmd.Parameters.AddWithValue("@ID", idUsuario);
+        //            return cmd.ExecuteNonQuery() > 0;
+        //        }
+        //    }
+        //}
+        public bool ActualizarTelefonoUsuario(int idUsuario, string nuevoTelefono)
+        {
+            Conexion c1 = new Conexion();
+            using (MySqlConnection conn = c1.obtenerconexion())
+            {
+                conn.Open();
+                string query = @"UPDATE usuarios 
+                                 SET NumeroTelefono = @Telefono 
+                                 WHERE ID = @ID";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Telefono", nuevoTelefono);
+                    cmd.Parameters.AddWithValue("@ID", idUsuario);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+        public bool ActualizarCorreoUsuario(int idUsuario, string nuevoCorreo)
+        {
+            Conexion c1 = new Conexion();
+            using (MySqlConnection conn = c1.obtenerconexion())
+            {
+                conn.Open();
+                string query = @"UPDATE usuarios 
+                                 SET CorreoElectronico = @Correo 
+                                 WHERE ID = @ID";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Correo", nuevoCorreo);
+                    cmd.Parameters.AddWithValue("@ID", idUsuario);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
         public bool ActualizarRolUsuario(int idUsuario, int nuevoRol)
         {
             Conexion c1 = new Conexion();

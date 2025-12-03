@@ -3,32 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|c:\\users\\julia\\onedrive\\escritorio\\blackgym\\blackgym\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\recepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\recepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\recepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\recepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\modeloturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\modeloturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\modelopagos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\modelologin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\modelologin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|c:\\users\\julia\\onedrive\\escritorio\\blackgym\\blackgym\\modelopagos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\modelopagos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\pagos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\pagos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\registrousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\registrousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\registrousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\registrousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\modeloturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\modeloturno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\diagramaclases.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\diagramaclases.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\recuperarcontrase\u00F1aygmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\recuperarcontrase\u00F1aygmail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\recepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\recepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\blackgym\\recepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70DE2DB7-D3CF-405C-B5E1-EDB4FB79D179}|BlackGym\\BlackGym.csproj|solutionrelative:blackgym\\recepcion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,7 +78,165 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmPrincipal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\FrmPrincipal.cs",
+              "RelativeDocumentMoniker": "BlackGym\\FrmPrincipal.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\FrmPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "BlackGym\\FrmPrincipal.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T02:08:42.928Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ADMINISTRADOR.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ADMINISTRADOR.cs",
+              "RelativeDocumentMoniker": "BlackGym\\ADMINISTRADOR.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ADMINISTRADOR.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "BlackGym\\ADMINISTRADOR.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T01:15:05.231Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ADMINISTRADOR.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ADMINISTRADOR.cs",
+              "RelativeDocumentMoniker": "BlackGym\\ADMINISTRADOR.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ADMINISTRADOR.cs*",
+              "RelativeToolTip": "BlackGym\\ADMINISTRADOR.cs*",
+              "ViewState": "AgIAAFcCAAAAAAAAAAAIwHYCAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:00:58.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ModeloPagos.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ModeloPagos.cs",
+              "RelativeDocumentMoniker": "BlackGym\\ModeloPagos.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ModeloPagos.cs",
+              "RelativeToolTip": "BlackGym\\ModeloPagos.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAmwCsAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T15:46:21.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ModeloLogin.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ModeloLogin.cs",
+              "RelativeDocumentMoniker": "BlackGym\\ModeloLogin.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ModeloLogin.cs",
+              "RelativeToolTip": "BlackGym\\ModeloLogin.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAmwGQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T01:38:06.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\FrmPrincipal.cs",
+              "RelativeDocumentMoniker": "BlackGym\\FrmPrincipal.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\FrmPrincipal.cs",
+              "RelativeToolTip": "BlackGym\\FrmPrincipal.cs",
+              "ViewState": "AgIAAKMBAAAAAAAAAAAmwKsBAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T02:08:48.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\Form1.cs",
+              "RelativeDocumentMoniker": "BlackGym\\Form1.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "BlackGym\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T19:12:26.514Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Pagos.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\Pagos.cs",
+              "RelativeDocumentMoniker": "BlackGym\\Pagos.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\Pagos.cs",
+              "RelativeToolTip": "BlackGym\\Pagos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T19:12:09.687Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RegistroUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\RegistroUsuario.cs",
+              "RelativeDocumentMoniker": "BlackGym\\RegistroUsuario.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\RegistroUsuario.cs",
+              "RelativeToolTip": "BlackGym\\RegistroUsuario.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAuwG4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T19:11:33.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegistroUsuario.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\RegistroUsuario.cs",
+              "RelativeDocumentMoniker": "BlackGym\\RegistroUsuario.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\RegistroUsuario.cs [Dise\u00F1o]",
+              "RelativeToolTip": "BlackGym\\RegistroUsuario.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T19:11:30.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RecuperarContrase\u00F1ayGmail.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\RecuperarContrase\u00F1ayGmail.cs",
+              "RelativeDocumentMoniker": "BlackGym\\RecuperarContrase\u00F1ayGmail.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\RecuperarContrase\u00F1ayGmail.cs",
+              "RelativeToolTip": "BlackGym\\RecuperarContrase\u00F1ayGmail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-27T18:33:41.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ModeloTurno.cs",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ModeloTurno.cs",
+              "RelativeDocumentMoniker": "BlackGym\\ModeloTurno.cs",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ModeloTurno.cs",
+              "RelativeToolTip": "BlackGym\\ModeloTurno.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwCAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-17T16:45:53.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DiagramaClases.cd",
+              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\DiagramaClases.cd",
+              "RelativeDocumentMoniker": "BlackGym\\DiagramaClases.cd",
+              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\DiagramaClases.cd",
+              "RelativeToolTip": "BlackGym\\DiagramaClases.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2025-11-24T18:00:32.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "Recepcion.cs",
               "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\Recepcion.cs",
               "RelativeDocumentMoniker": "BlackGym\\Recepcion.cs",
@@ -58,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "Recepcion.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\Recepcion.cs",
               "RelativeDocumentMoniker": "BlackGym\\Recepcion.cs",
@@ -66,65 +256,6 @@
               "RelativeToolTip": "BlackGym\\Recepcion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T16:50:28.418Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ModeloTurno.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ModeloTurno.cs",
-              "RelativeDocumentMoniker": "BlackGym\\ModeloTurno.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ModeloTurno.cs",
-              "RelativeToolTip": "BlackGym\\ModeloTurno.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T16:45:53.332Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ModeloPagos.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ModeloPagos.cs",
-              "RelativeDocumentMoniker": "BlackGym\\ModeloPagos.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ModeloPagos.cs",
-              "RelativeToolTip": "BlackGym\\ModeloPagos.cs",
-              "ViewState": "AgIAAI8AAAAAAAAAAAAuwKsAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T15:46:21.409Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrmPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\FrmPrincipal.cs",
-              "RelativeDocumentMoniker": "BlackGym\\FrmPrincipal.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\FrmPrincipal.cs",
-              "RelativeToolTip": "BlackGym\\FrmPrincipal.cs",
-              "ViewState": "AgIAAJMCAAAAAAAAAAAqwL4CAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T02:08:48.02Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmPrincipal.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\FrmPrincipal.cs",
-              "RelativeDocumentMoniker": "BlackGym\\FrmPrincipal.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\FrmPrincipal.cs [Dise\u00F1o]",
-              "RelativeToolTip": "BlackGym\\FrmPrincipal.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T02:08:42.928Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ADMINISTRADOR.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ADMINISTRADOR.cs",
-              "RelativeDocumentMoniker": "BlackGym\\ADMINISTRADOR.cs",
-              "ToolTip": "C:\\Users\\julia\\OneDrive\\Escritorio\\BlackGym\\BlackGym\\ADMINISTRADOR.cs [Dise\u00F1o]",
-              "RelativeToolTip": "BlackGym\\ADMINISTRADOR.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T01:15:05.231Z"
             }
           ]
         }

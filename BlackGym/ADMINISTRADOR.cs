@@ -13,6 +13,7 @@ namespace BlackGym
     public partial class ADMINISTRADOR : Form
     {
         int idRol = 0;
+        public int IngresoRestanteVAR = 0;
         public ADMINISTRADOR()
         {
             InitializeComponent();
@@ -197,25 +198,48 @@ namespace BlackGym
         {
             if (int.TryParse(txtID.Text, out int idUsuario)) // Verificar que el ID del usuario sea válido
             {
-                // Actualizar la fecha de pago
-                DateTime nuevaFechaPago = ((DateTimePicker)txtFechaPago).Value; // Obtener la nueva fecha de pago
+                // Actualizar los ingresos restantes
                 ModeloPagos modeloPagos = new ModeloPagos();
-                bool fechaActualizada = modeloPagos.ActualizarFechaPago(idUsuario, nuevaFechaPago);
+                bool ingresosActualizados = modeloPagos.ActualizarIngresosRestantes(idUsuario, IngresoRestanteVAR);
 
-                // Mostrar mensaje de confirmación
-                if (fechaActualizada)
+                if (ingresosActualizados)
                 {
-                    MessageBox.Show("Fecha de pago actualizada correctamente.");
+                    MessageBox.Show("Ingresos restantes actualizados correctamente.");
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo actualizar la fecha de pago.");
+                    MessageBox.Show("No se pudieron actualizar los ingresos restantes.");
                 }
             }
             else
             {
                 MessageBox.Show("ID de usuario no válido.");
             }
+
+            //if (int.TryParse(txtID.Text, out int idUsuario)) // Verificar que el ID del usuario sea válido
+            //{
+            //    // Actualizar la fecha de pago
+            //    DateTime nuevaFechaPago = ((DateTimePicker)txtFechaPago).Value; // Obtener la nueva fecha de pago
+            //    ModeloPagos modeloPagos = new ModeloPagos();
+            //    bool fechaActualizada = modeloPagos.ActualizarFechaPago(idUsuario, nuevaFechaPago);
+
+            //    // Mostrar mensaje de confirmación
+            //    if (fechaActualizada)
+            //    {
+            //        MessageBox.Show("Fecha de pago actualizada correctamente.");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No se pudo actualizar la fecha de pago.");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("ID de usuario no válido.");
+            //}
+
+            //
+
             //if (int.TryParse(txtID.Text, out int idUsuario)) // Verificar que el ID del usuario sea válido
             //{
             //    // Actualizar la fecha de pago
@@ -392,10 +416,7 @@ namespace BlackGym
                 MessageBox.Show("ID de usuario no válido.");
             }
         }
-            //else
-            //{
-            //    MessageBox.Show("ID de usuario no válido.");
-            //}
+ 
         
 
         private void txtRol_TextChanged(object sender, EventArgs e)
@@ -410,7 +431,7 @@ namespace BlackGym
 
         private void eliminarUsuario_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtID.Text, out int idUsuario)) // Verificar que el ID del usuario sea válido
+            if (int.TryParse(txtID.Text, out int idUsuario)) 
             {
                 ModeloLogin modeloLogin = new ModeloLogin();
                 bool eliminado = modeloLogin.EliminarUsuario(idUsuario);
@@ -419,7 +440,7 @@ namespace BlackGym
                 {
                     MessageBox.Show("Usuario eliminado correctamente.");
 
-                    // Actualizar el DataGridView para reflejar los cambios
+                    
                     DataTable datosActualizados = modeloLogin.obtenerUsuario();
                     dgvMostrarUsuario.DataSource = datosActualizados;
                 }
@@ -437,10 +458,10 @@ namespace BlackGym
 
         private void eliminarTurno_Click(object sender, EventArgs e)
         {
-            if (dgvMostrarTurnos.SelectedRows.Count > 0) // Verificar que haya una fila seleccionada
+            if (dgvMostrarTurnos.SelectedRows.Count > 0) 
             {
                 DataGridViewRow filaSeleccionada = dgvMostrarTurnos.SelectedRows[0];
-                if (int.TryParse(filaSeleccionada.Cells["idTurno"].Value?.ToString(), out int idTurno)) // Verificar que el ID sea válido
+                if (int.TryParse(filaSeleccionada.Cells["idTurno"].Value?.ToString(), out int idTurno)) 
                 {
                     ModeloTurno modeloTurno = new ModeloTurno();
                     bool eliminado = modeloTurno.EliminarTurno(idTurno);
@@ -449,7 +470,7 @@ namespace BlackGym
                     {
                         MessageBox.Show("Turno eliminado correctamente.");
 
-                        // Actualizar el DataGridView para reflejar los cambios
+                        
                         DataTable datosActualizados = modeloTurno.obtenerTurno();
                         dgvMostrarTurnos.DataSource = datosActualizados;
                     }
@@ -471,14 +492,177 @@ namespace BlackGym
 
         private void BotonCerrarSesion_Click(object sender, EventArgs e)
         {
-            // Limpiar la sesión actual
+           
             SesionActual.UsuarioLogueado = null;
 
-            // Redirigir al formulario de inicio de sesión
+           
             Form1 loginForm = new Form1();
-            this.Hide(); // Ocultar el formulario actual
-            loginForm.Show(); // Mostrar el formulario de inicio de sesión
+            this.Hide(); 
+            loginForm.Show(); 
 
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            string telefono = txtTelefono.Text.Trim();
+            string patronTelefono = @"^\d{10}$"; 
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(telefono, patronTelefono))
+            {
+                txtTelefono.BackColor = Color.LightCoral; 
+            }
+            else
+            {
+                txtTelefono.BackColor = Color.White; 
+            }
+
+            //if (int.TryParse(txtID.Text, out int idUsuario)) // Verificar que el ID del usuario sea válido
+            //{
+            //    ModeloLogin modeloLogin = new ModeloLogin();
+            //    bool telefonoActualizado = modeloLogin.ActualizarTelefonoUsuario(idUsuario, txtTelefono.Text);
+
+            //if (telefonoActualizado)
+            //{
+            //    // MessageBox opcional para evitar interrupciones constantes
+            //    // MessageBox.Show("Teléfono actualizado correctamente.");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("No se pudo actualizar el teléfono.");
+            //}
+        }
+            //else
+            //{
+            //    MessageBox.Show("ID de usuario no válido.");
+            //}
+        
+
+        private void MisTurnosSemanalesCBX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (MisTurnosSemanalesCBX.SelectedItem == null) return;
+
+
+            switch (MisTurnosSemanalesCBX.SelectedItem.ToString())
+            {
+                case "1":
+                    
+                    IngresoRestanteVAR = 4;
+                    break;
+                case "2":
+                    
+                    IngresoRestanteVAR = 8;
+                    break;
+                case "3":
+                    
+                    IngresoRestanteVAR = 12;
+                    break;
+                case "4":
+                    
+                    IngresoRestanteVAR = 16;
+                    break;
+                case "5":
+                    
+                    IngresoRestanteVAR = 20;
+                    break;
+                default:
+                    
+                    IngresoRestanteVAR = 0;
+                    break;
+            }
+
+            
+
+        }
+
+        private void txtCorreo_TextChanged(object sender, EventArgs e)
+        {
+            string correo = txtCorreo.Text.Trim();
+            string patronCorreo = @"^[^@\s]+@[^@\s]+\.[^@\s]+$"; // Expresión regular para validar correos
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(correo, patronCorreo))
+            {
+                txtCorreo.BackColor = Color.LightCoral; // Cambiar el fondo a rojo si es inválido
+            }
+            else
+            {
+                txtCorreo.BackColor = Color.White; 
+            }
+
+            //if (int.TryParse(txtID.Text, out int idUsuario)) // Verificar que el ID del usuario sea válido
+            //{
+            //ModeloLogin modeloLogin = new ModeloLogin();
+            //bool correoActualizado = modeloLogin.ActualizarCorreoUsuario(idUsuario, txtCorreo.Text);
+
+            //    if (correoActualizado)
+            //    {
+
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No se pudo actualizar el correo.");
+            //    }
+        }
+            
+        
+
+        private void ModificarTelefono_Click(object sender, EventArgs e)
+        {
+            string telefono = txtTelefono.Text.Trim();
+            string patronTelefono = @"^\d{10}$"; 
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(telefono, patronTelefono))
+            {
+                MessageBox.Show("El número de teléfono debe contener exactamente 10 dígitos.");
+                return; 
+            }
+            if (int.TryParse(txtID.Text, out int idUsuario)) 
+            {
+                ModeloLogin modeloLogin = new ModeloLogin();
+                bool telefonoActualizado = modeloLogin.ActualizarTelefonoUsuario(idUsuario, txtTelefono.Text);
+
+                if (telefonoActualizado)
+                {
+                    MessageBox.Show("Teléfono actualizado correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo actualizar el teléfono.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("ID de usuario no válido.");
+            }
+        }
+
+        private void ModificarCorreo_Click(object sender, EventArgs e)
+        {
+            string correo = txtCorreo.Text.Trim();
+            string patronCorreo = @"^[^@\s]+@[^@\s]+\.[^@\s]+$"; 
+
+            if (!System.Text.RegularExpressions.Regex.IsMatch(correo, patronCorreo))
+            {
+                MessageBox.Show("El correo electrónico no tiene un formato válido.");
+                return; 
+            }
+            if (int.TryParse(txtID.Text, out int idUsuario)) 
+            {
+                ModeloLogin modeloLogin = new ModeloLogin();
+                bool correoActualizado = modeloLogin.ActualizarCorreoUsuario(idUsuario, txtCorreo.Text);
+
+                if (correoActualizado)
+                {
+                    MessageBox.Show("Correo actualizado correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo actualizar el correo.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("ID de usuario no válido.");
+            }
         }
         //else
         //{
