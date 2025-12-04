@@ -19,6 +19,7 @@ namespace BlackGym
         public int segundosIniciales = 3600;
         private int turnoActualId = -1; // guardamos el ID del turno
         Usuario usuariologin;
+        
         public FrmPrincipal(Usuario usuariologin)
         {
             
@@ -324,19 +325,26 @@ namespace BlackGym
             }
         }
 
+
+        public void Refresh(int idcliente)
+        {
+            
+
+            ModeloTurno modeloTurnos = new ModeloTurno();
+            DataTable datosTurnos = modeloTurnos.obtenerTurnosPorUsuario(idcliente);
+            dgvMuestroTurnos.DataSource = datosTurnos;
+        }
+
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             TurnoClienteTimer.Stop();
 
             //Hay que controlar que el usuario sea el cliente logueado
 
+            
             int idCliente = SesionActual.UsuarioLogueado.Id;
 
-            ModeloTurno modeloTurnos = new ModeloTurno();
-            DataTable datosTurnos = modeloTurnos.obtenerTurnosPorUsuario(idCliente);
-            dgvMuestroTurnos.DataSource = datosTurnos;
-
-
+            Refresh(idCliente);
             //
             ModeloPagos modeloPagos = new ModeloPagos();
             
@@ -420,7 +428,7 @@ namespace BlackGym
 
         private void guna2GroupBox1_Click(object sender, EventArgs e)
         {
-
+          
         }
 
         private void BotonPago_Click(object sender, EventArgs e)
@@ -733,6 +741,13 @@ namespace BlackGym
             {
                 MessageBox.Show("Por favor, selecciona un turno para eliminar.");
             }
+        }
+
+        private void btnRefrsh_Click(object sender, EventArgs e)
+        {
+            int idCliente = SesionActual.UsuarioLogueado.Id;
+
+            Refresh(idCliente);
         }
 
         /*if (segundosTrabajados < segundosIniciales) este es el original
